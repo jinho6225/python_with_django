@@ -76,9 +76,33 @@ print(a.div())
 
 
 class MoreFourCal(FourCal):
-    pass
+    def pow(self):
+        result = self.first ** self.second
+        return result
 
 a = MoreFourCal(4, 2)
 print(a)
 print(a.add())
 print(a.mul())
+print(a.pow())
+
+
+class SafeFourCal(FourCal):
+  def div(self):
+    if self.second == 0:
+      return 0
+    else:
+      return self.first / self.second
+
+print("="*50)
+a = SafeFourCal(4, 0)
+print(a.div())
+
+
+print("="*50)
+
+class Family:
+    lastname = "Kim"
+
+fam = Family()
+print(fam.lastname)
